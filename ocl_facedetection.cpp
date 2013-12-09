@@ -113,6 +113,9 @@ const float kScaleFactor = 1.3f;
 const int kFirstKernelStart = 0;
 const int kSecondKernelStart = 3;
 const int kThirdKernelStart = 22;
+const float picScale=1.1;
+const float videoScale=3.2;
+
 //cl parameters
 cl_platform_id 		x_platform;
 cl_device_id 		x_device;
@@ -342,7 +345,7 @@ int main( int argc, const char** argv )
             else
                 flip( frame, frameCopy, 0 );
 
-            detectAndDraw( frameCopy, cascade,3.2, tryflip );
+            detectAndDraw( frameCopy, cascade,videoScale, tryflip );
 
             if( waitKey( 10 ) >= 0 )
                 goto _cleanup_;
@@ -361,7 +364,7 @@ _cleanup_:
         cout << "In image read" << endl;
         if( !image.empty() )
         {
-            detectAndDraw( image, cascade, kScaleFactor, tryflip );
+            detectAndDraw( image, cascade,picScale, tryflip );
             waitKey(0);
         }
         else if( !inputName.empty() )
@@ -382,7 +385,7 @@ _cleanup_:
                     image = imread( buf, 1 );
                     if( !image.empty() )
                     {
-                        detectAndDraw( image, cascade, kScaleFactor, tryflip );
+                        detectAndDraw( image, cascade, picScale, tryflip );
                         c = waitKey(0);
                         if( c == 27 || c == 'q' || c == 'Q' )
                             break;
