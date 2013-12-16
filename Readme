@@ -11,4 +11,7 @@ Usage:
    ./face "IMAGE NAME" for image
 3.GUI usage*
   need to change the program path in detectdialog.cpp file 
+  1)qmake -project
+  2)qmake
+  3)make
 *GUI part is not essential for the main program.More effect with the GUI.
