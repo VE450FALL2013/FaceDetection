@@ -1,0 +1,14 @@
+Beignet Opencl Accelerate FaceDection Project
+SJTU UMJI 2013 FALL STUDENT CAPSTONE PORJECT
+Environmen:
+1.Beignet (OpenCL 1.1) http://wiki.freedesktop.org/www/Software/Beignet/
+2.OpenCV 2.4.6 or 2.4.7
+3.Qt 4.8.5(GUI part)*
+Usage:
+1.make
+  For the main program 
+2. ./face for webcamre
+   ./face "IMAGE NAME" for image
+3.GUI usage*
+  need to change the program path in detectdialog.cpp file 
+*GUI part is not essential for the main program.More effect with the GUI.
