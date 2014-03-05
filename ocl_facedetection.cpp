@@ -145,7 +145,8 @@ vector<numbers_t> rects[2];
 int buf_idx = -1;
 bool first_reach = true;
 int frameCnt;
-int* effectCase;
+// int* effectCase;
+int* effectCase = new int(0);
 #define check(err) assert(err == CL_SUCCESS)
 typedef unsigned int uint;
 /*
@@ -280,14 +281,14 @@ int main( int argc, const char** argv )
     string inputName;
     bool tryflip = false;
     help();
-    key_t key=ftok("/etc",10);
+    //key_t key=ftok("/etc",10);
     //Get system varible
-    int shmid=shmget(key,4096,IPC_CREAT);
-    if(shmid == -1)	{
-	shmid = shmget(key,0,0);
-	if(shmid==-1) return 0; 
-    }
-    effectCase=(int*)shmat(shmid,NULL,0);
+    //int shmid=shmget(key,4096,IPC_CREAT);
+    //if(shmid == -1)	{
+	//shmid = shmget(key,0,0);
+	//if(shmid==-1) return 0; 
+    //}
+    //effectCase=(int*)shmat(shmid,NULL,0);
     OCL_CascadeClassifier cascade;//, nestedCascade;
     double scale = 1;
 
